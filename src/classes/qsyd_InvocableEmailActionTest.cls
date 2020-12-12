@@ -26,13 +26,6 @@ public with sharing class qsyd_InvocableEmailActionTest {
 
     static Account testAccount;
 
-    @TestSetup
-    private static void setupTestData() {
-        // Insert an account
-        testAccount = new Account(Name = 'Test Account');
-        INSERT testAccount;
-    }
-
     @IsTest
     private static void initialiseSetupTestData() {
 
@@ -40,6 +33,9 @@ public with sharing class qsyd_InvocableEmailActionTest {
 
     @IsTest
     private static void given_requiredEmailParametersAreProvided_when_anEmailIsInstantiated_then_anEmailIsSent() {
+         // Insert an account
+        testAccount = new Account(Name = 'Test Account');
+        INSERT testAccount;
         qsyd_InvocableEmailAction.InvocableEmailParam param = new qsyd_InvocableEmailAction.InvocableEmailParam();
         List<qsyd_InvocableEmailAction.InvocableEmailParam> params = new List<qsyd_InvocableEmailAction.InvocableEmailParam>();
 
@@ -74,6 +70,9 @@ public with sharing class qsyd_InvocableEmailActionTest {
 
     @IsTest
     private static void given_noRecipientsAreProvided_when_anEmailIsInstantiated_then_anExceptionIsThrown() {
+          // Insert an account
+        testAccount = new Account(Name = 'Test Account');
+        INSERT testAccount;
         qsyd_InvocableEmailAction.InvocableEmailParam param = new qsyd_InvocableEmailAction.InvocableEmailParam();
         List<qsyd_InvocableEmailAction.InvocableEmailParam> params = new List<qsyd_InvocableEmailAction.InvocableEmailParam>();
         Integer exceptions = 0;
@@ -99,6 +98,9 @@ public with sharing class qsyd_InvocableEmailActionTest {
 
     @IsTest
     private static void given_anOrgWideEmailAddressDoesNotExist_when_anOrgWideEmailIsQueried_then_anExceptionIsThrown() {
+          // Insert an account
+        testAccount = new Account(Name = 'Test Account');
+        INSERT testAccount;
         qsyd_InvocableEmailAction.InvocableEmailParam param = new qsyd_InvocableEmailAction.InvocableEmailParam();
         List<qsyd_InvocableEmailAction.InvocableEmailParam> params = new List<qsyd_InvocableEmailAction.InvocableEmailParam>();
         Integer exceptions = 0;
@@ -128,6 +130,9 @@ public with sharing class qsyd_InvocableEmailActionTest {
 
     @IsTest
     private static void given_anInvalidEmailIsSupplied_when_anEmailIsInstantiated_then_anEmailIsSentWithErrors() {
+          // Insert an account
+        testAccount = new Account(Name = 'Test Account');
+        INSERT testAccount;
         qsyd_InvocableEmailAction.InvocableEmailParam param = new qsyd_InvocableEmailAction.InvocableEmailParam();
         List<qsyd_InvocableEmailAction.InvocableEmailParam> params = new List<qsyd_InvocableEmailAction.InvocableEmailParam>();
         Integer exceptions = 0;

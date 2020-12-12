@@ -11,7 +11,7 @@
      TODO:
  */
 
-@IsTest
+@IsTest(SeeAllData=true)
 public with sharing class qsyd_InvocableEmailTemplateActionTest {
 
     private static final String ACCOUNT = 'Account';

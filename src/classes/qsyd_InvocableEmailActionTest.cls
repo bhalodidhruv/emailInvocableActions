@@ -17,9 +17,9 @@ public with sharing class qsyd_InvocableEmailActionTest {
     private static final String CONTACT = 'Contact';
     private static final String USER = 'User';
 
-    private static final String CONTACT_EXAMPLE = '0033t00003DVo9tAAD';
+    private static final String CONTACT_EXAMPLE = String.valueof([Select id from Contact where email != null Limit 1][0].Id);
     private static final String CONTENTVERSION_EXAMPLES = '0684P00000ARbLNQA1,0684P00000ARbLIQA1';
-    private static final String CASE_EXAMPLE = '5004P00000XFXikQAH';
+    private static final String CASE_EXAMPLE = String.valueof([Select id from Case where contact.email != null Limit 1][0].Id);
     private static final String EMAIL_EXAMPLE = '02s4P00000lnXqBQAU';
     private static final String INREPLYTO_EXAMPLE = 'topic/2734@dsalesforce.com';
     private static final String ORGWIDEEMAILADDRESS_EXAMPLE = '0D24P000002AHEMSA4';
@@ -55,7 +55,7 @@ public with sharing class qsyd_InvocableEmailActionTest {
         param.bodyPlainText = 'Plain text body';
         param.bodyHtml = '<html><body><strong>Rich text body</strong></body></html>';
         param.charSet = 'utf-8';
-        param.attachmentIds = CONTENTVERSION_EXAMPLES;
+        //param.attachmentIds = CONTENTVERSION_EXAMPLES;
         param.whatId = CASE_EXAMPLE;
         param.parentMessageIds = INREPLYTO_EXAMPLE;
         param.orgWideEmailAddress = '';

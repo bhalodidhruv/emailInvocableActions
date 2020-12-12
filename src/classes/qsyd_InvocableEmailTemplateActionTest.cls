@@ -18,7 +18,7 @@ public with sharing class qsyd_InvocableEmailTemplateActionTest {
     private static final String CONTACT = 'Contact';
     private static final String USER = 'User';
 
-    private static final String CONTACT_EXAMPLE = '0033t00003DVo9tAAD';
+    private static final String CONTACT_EXAMPLE = [Select id from Contact where email != null Limit 1][0].Id;
 
     static EmailTemplate emailTemplate;
 

@@ -10,7 +10,7 @@
      TODO:
  */
 
-@IsTest
+@IsTest(SeeAllData=true)
 public with sharing class qsyd_InvocableEmailActionTest {
 
     private static final String ACCOUNT = 'Account';

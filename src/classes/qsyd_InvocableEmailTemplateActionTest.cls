@@ -22,15 +22,7 @@ public with sharing class qsyd_InvocableEmailTemplateActionTest {
 
     static EmailTemplate emailTemplate;
 
-    @TestSetup
-    private static void setupTestData() {
-
-        // Insert an email template
-        emailTemplate = new EmailTemplate(Body = 'Template body', Description = 'Test template', DeveloperName = 'TestTemplate', Name = 'Test Template', FolderId = UserInfo.getUserId(), TemplateType = 'text', IsActive = True);
-        INSERT emailTemplate;
-
-        System.debug('emailTemplate: ' + emailTemplate.Id);
-    }
+ 
 
     @IsTest
     private static void initialiseSetupTestData() {
@@ -44,6 +36,11 @@ public with sharing class qsyd_InvocableEmailTemplateActionTest {
 
     @IsTest
     private static void given_requiredEmailParametersAreProvided_when_anEmailIsInstantiated_then_anEmailIsSent() {
+         // Insert an email template
+        emailTemplate = new EmailTemplate(Body = 'Template body', Description = 'Test template', DeveloperName = 'TestTemplate', Name = 'Test Template', FolderId = UserInfo.getUserId(), TemplateType = 'text', IsActive = True);
+        INSERT emailTemplate;
+
+        System.debug('emailTemplate: ' + emailTemplate.Id);
         qsyd_InvocableEmailTemplateAction.InvocableEmailParam param = new qsyd_InvocableEmailTemplateAction.InvocableEmailParam();
         List<qsyd_InvocableEmailTemplateAction.InvocableEmailParam> params = new List<qsyd_InvocableEmailTemplateAction.InvocableEmailParam>();
 
@@ -67,6 +64,11 @@ public with sharing class qsyd_InvocableEmailTemplateActionTest {
 
     @IsTest
     private static void given_anInvalidEmailIsSupplied_when_anEmailIsInstantiated_then_anEmailIsSentWithErrors() {
+         // Insert an email template
+        emailTemplate = new EmailTemplate(Body = 'Template body', Description = 'Test template', DeveloperName = 'TestTemplate', Name = 'Test Template', FolderId = UserInfo.getUserId(), TemplateType = 'text', IsActive = True);
+        INSERT emailTemplate;
+
+        System.debug('emailTemplate: ' + emailTemplate.Id);
         qsyd_InvocableEmailTemplateAction.InvocableEmailParam param = new qsyd_InvocableEmailTemplateAction.InvocableEmailParam();
         List<qsyd_InvocableEmailTemplateAction.InvocableEmailParam> params = new List<qsyd_InvocableEmailTemplateAction.InvocableEmailParam>();
         Integer exceptions = 0;
@@ -94,6 +96,11 @@ public with sharing class qsyd_InvocableEmailTemplateActionTest {
 
     @IsTest
     private static void given_anInvalidTemplateIsSupplied_when_anEmailIsInstantiated_then_anExceptionIsThrown() {
+         // Insert an email template
+        emailTemplate = new EmailTemplate(Body = 'Template body', Description = 'Test template', DeveloperName = 'TestTemplate', Name = 'Test Template', FolderId = UserInfo.getUserId(), TemplateType = 'text', IsActive = True);
+        INSERT emailTemplate;
+
+        System.debug('emailTemplate: ' + emailTemplate.Id);
         qsyd_InvocableEmailTemplateAction.InvocableEmailParam param = new qsyd_InvocableEmailTemplateAction.InvocableEmailParam();
         List<qsyd_InvocableEmailTemplateAction.InvocableEmailParam> params = new List<qsyd_InvocableEmailTemplateAction.InvocableEmailParam>();
         Integer exceptions = 0;
@@ -121,6 +128,11 @@ public with sharing class qsyd_InvocableEmailTemplateActionTest {
 
     @IsTest
     private static void given_anIncorrectEmailTemplateIsProvided_when_anEmailIsInstantiated_then_anExceptionIsThrown() {
+         // Insert an email template
+        emailTemplate = new EmailTemplate(Body = 'Template body', Description = 'Test template', DeveloperName = 'TestTemplate', Name = 'Test Template', FolderId = UserInfo.getUserId(), TemplateType = 'text', IsActive = True);
+        INSERT emailTemplate;
+
+        System.debug('emailTemplate: ' + emailTemplate.Id);
         qsyd_InvocableEmailTemplateAction.InvocableEmailParam param = new qsyd_InvocableEmailTemplateAction.InvocableEmailParam();
         List<qsyd_InvocableEmailTemplateAction.InvocableEmailParam> params = new List<qsyd_InvocableEmailTemplateAction.InvocableEmailParam>();
         Integer exceptions = 0;
